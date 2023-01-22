@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RazorPagesRentCar.Models\RazorPagesRentCar.Models.csproj" />
+    <ProjectReference Include="..\RazorPagesRentCar.Services\RazorPagesRentCar.Services.csproj" />
+  </ItemGroup>
+
+</Project>

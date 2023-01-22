@@ -1,0 +1,33 @@
+﻿@page
+@model RazorPagesRentCar.Pages.Cars.CarsModel
+
+@{
+    ViewData["Title"] = "Cars";
+    ViewData["ShowButtons"] = true;
+}
+@if(TempData["SuccesMessage"] != null)
+{
+    <div class="alert alert-success text-center">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<form method="get" class="mb-3">
+    <div class="input-group">
+        <input class="form-control" asp-for="SearchTerm" />
+        <div class="input-group-append">
+            <buttom type="submit" class="btn btn-success">Search</buttom>
+        </div>
+    </div>
+</form>
+
+
+<vc:head-count district="@null"></vc:head-count>
+<div class="row">
+    @foreach(var item in Model.Car)
+    {
+        <div class="col-12 col-sm-6 col-lg-4">
+            <partial name="_DisplayCarsPartial" model="item" view-data="ViewData"/>
+        </div>
+    }
+</div>

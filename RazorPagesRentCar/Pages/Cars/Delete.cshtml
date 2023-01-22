@@ -1,0 +1,36 @@
+﻿@page "{id}"
+@model RazorPagesRentCar.Pages.Cars.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+    ViewData["ShowButtons"] = false;
+}
+
+<h1 class="text-center">Delete Confirmation</h1>
+
+
+<div class="alert alert-danger">
+    <div class="row">
+        <div class="col-12 col-md-6 col-xl-4 offset-sm-0 offset-md-3 offset-xl-4">
+            <partial name="_DisplayCarsPartial" model="Model.Cars" view-data="ViewData"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-6 col-xl-4 offset-sm-0 offset-md-3 offset-xl-4">
+            <div class="text-center text-secondary">
+                <h4>Car ID: <span class="text-primary">@Model.Cars.Id</span></h4><hr />
+                <h4>Price: <span class="text-primary">@Model.Cars.Price</span></h4><hr />
+                <h4>District: <span class="text-primary">@Model.Cars.District</span></h4><hr />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <h5>Are you sure want to delete employee - @Model.Cars.Name?</h5>
+
+            <form method="post">
+                <button type="submit" class="btn btn-danger">Yes</button>
+                <a class="btn btn-success" asp-page="/Cars/Cars">No</a>
+            </form>
+        </div>
+    </div>
+</div>
